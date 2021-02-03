@@ -172,3 +172,29 @@ bad <-(sum(is.na(airquality$Ozone)))
 bad
 
 ```
+
+#vectorized Operations
+```{r}
+x<- 1:4; y <- 6:9
+x+y
+x>2
+x>=2
+y==8
+x*y
+x/y
+
+```
+#vectorized Matrix Operation
+```{r}
+x<- matrix(1:4,2,2); y<-matrix(rep(10,4),2 ,2) # vector y means reprensent 10 fourtimes
+print(y)
+print(x)
+
+x*y # element - wise multiplication
+x/y
+
+```
+
+```{r}
+# to perform a true matrix mulitiplication on  "%%" is required
+x%*%y 

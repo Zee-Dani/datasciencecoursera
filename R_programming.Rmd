@@ -160,16 +160,42 @@ good
 x[good]
 y[good]
 ```
+```{r}
+airquality[47,]
+
+```
 
 ```{r}
-airquality[46:47,]
+airquality
+#View(airquality)
 good <- complete.cases(airquality)#remove all rows with NA
+View(good)
+c <- mean(good$Ozone)
+c
 airquality[good,][1:6, ]
 ```
+
 ```{r}
-nrow(airquality)
-bad <-(sum(is.na(airquality$Ozone)))
-bad
+airquality
+b<-airquality[which(airquality$Month==5),]
+b
+#c<-mean(b$Temp)
+c
+```
+```{r}
+m <-airquality[which(airquality$Ozone > 31 & airquality$Temp >90),]
+m
+mean(m$Solar.R)
+```
+
+```{r}
+airquality
+we <- na.omit(airquality$Ozone)
+we
+wee<-mean(we)
+wee
+#bad <-(sum(is.na(airquality$Ozone)))
+#bad
 
 ```
 
@@ -198,3 +224,37 @@ x/y
 ```{r}
 # to perform a true matrix mulitiplication on  "%%" is required
 x%*%y 
+```
+
+```{r}
+x <- c(4,TRUE)
+class(x)
+```
+```{r}
+x <- list(2, "a", "b", TRUE)
+class(x)
+y<-x[[1]]
+y
+class(y)
+```
+
+```{r}
+x <- c(1,3, 5) 
+y <- c(3, 2, 10)
+cbind(x, y)
+```
+```{r}
+x <- list(2, "a", "b", TRUE)
+x[[1]] 
+class(x)
+
+```
+
+```{r}
+x <- 1:4 
+y <- 2:3
+b<-x + y
+b
+class(b)
+```
+
